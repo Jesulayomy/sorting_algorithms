@@ -11,21 +11,23 @@ void insertion_sort_list(listint_t **list)
 	listint_t *temp = *list;
 	size_t size = 0;
 
-	while (temp)
+	if (*list)
 	{
-		size += 1;
-		temp = temp->next;
-	}
-
-	temp = *list;
-	while (temp->next)
-	{
-		if (temp->next->n < temp->n)
-			swap_till_end(list, &temp->next, size);
-		else
+		while (temp)
+		{
+			size += 1;
 			temp = temp->next;
-	}
+		}
 
+		temp = *list;
+		while (temp->next)
+		{
+			if (temp->next->n < temp->n)
+				swap_till_end(list, &temp->next, size);
+			else
+				temp = temp->next;
+		}
+	}
 }
 
 /**
