@@ -11,35 +11,38 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *temp = *list;
 	int st = 0, size, bound = 0, limit = 0;
 
-	for (size = 0; temp; size++)
-		temp = temp->next;
-	temp = *list;
-	while (st == 0)
+	if (temp != NULL && temp->next != NULL)
 	{
-		while (temp->next && (size - limit) - bound != 1)
+		for (size = 0; temp; size++)
+			temp = temp->next;
+		temp = *list;
+		while (st == 0)
 		{
-			if (temp->n > temp->next->n)
+			while (temp->next && (size - limit) - bound != 1)
 			{
-				swap_nodes(list, &temp->next);
-				print_list(*list);
+				if (temp->n > temp->next->n)
+				{
+					swap_nodes(list, &temp->next);
+					print_list(*list);
+				}
+				else
+					temp = temp->next;
+				limit += 1;
 			}
-			else
-				temp = temp->next;
-			limit += 1;
-		}
-		while (temp->prev && limit - bound != 0)
-		{
-			if (temp->n < temp->prev->n)
+			while (temp->prev && limit - bound != 0)
 			{
-				swap_nodes(list, &temp);
-				print_list(*list);
+				if (temp->n < temp->prev->n)
+				{
+					swap_nodes(list, &temp);
+					print_list(*list);
+				}
+				else
+					temp = temp->prev;
+				limit -= 1;
 			}
-			else
-				temp = temp->prev;
-			limit -= 1;
+			bound += 1;
+			st = sorted(list);
 		}
-		bound += 1;
-		st = sorted(list);
 	}
 }
 
