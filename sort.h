@@ -19,11 +19,19 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+int sorted(listint_t **);
+void _ssort(int *, int, int);
+void shell_sort(int *, size_t);
+void quick_sort(int *, size_t);
 void bubble_sort(int *, size_t);
+void counting_sort(int *, size_t);
+void _qsort(int *, int, int, int);
 void print_list(const listint_t *);
 void selection_sort(int *, size_t);
 void print_array(const int *, size_t);
+void cocktail_sort_list(listint_t **);
 void insertion_sort_list(listint_t **);
+void swap_nodes(listint_t **, listint_t **);
 void swap_till_end(listint_t **, listint_t **, size_t);
 
 #endif
