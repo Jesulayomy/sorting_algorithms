@@ -21,9 +21,11 @@ typedef struct listint_s
 
 int sorted(listint_t **);
 void _ssort(int *, int, int);
+void heap_sort(int *, size_t);
 void shell_sort(int *, size_t);
 void quick_sort(int *, size_t);
 void merge_sort(int *, size_t);
+void swap_nums(int *, int, int);
 void bubble_sort(int *, size_t);
 void counting_sort(int *, size_t);
 void counting_sort(int *, size_t);
@@ -37,6 +39,7 @@ void insertion_sort_list(listint_t **);
 void merge(int *, int, int, int, int *);
 void print_data(char *, int *, int, int);
 void swap_nodes(listint_t **, listint_t **);
+void recursion_heap(int *, int, size_t, int);
 void swap_till_end(listint_t **, listint_t **, size_t);
 
 #endif
