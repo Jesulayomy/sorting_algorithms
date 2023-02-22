@@ -41,5 +41,11 @@ void print_data(char *, int *, int, int);
 void swap_nodes(listint_t **, listint_t **);
 void recursion_heap(int *, int, size_t, int);
 void swap_till_end(listint_t **, listint_t **, size_t);
+void radix_sort(int *array, size_t size);
+void print_bitonic(int *arr, int i, int limit);
+void sort_up(int *arr, int low, int high);
+void sort_down(int *arr, int low, int high);
+void recursion(int *, int, int, int bool, size_t);
+void bitonic_sort(int *array, size_t size);
 
 #endif
